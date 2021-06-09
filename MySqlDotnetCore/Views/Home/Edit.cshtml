@@ -57,7 +57,10 @@
                             <div class="form-group">
                                 <label asp-for="department_id" class="control-label col-md-3 col-sm-3 col-xs-12" ></label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                <input asp-for="department_id" required="required" class="form-control col-md-7 col-xs-12">
+                                <select asp-for="department_id" class="form-control">
+                                    <option value="FA">Finance</option>
+                                    <option value="IT">Information Technology</option>
+                                </select>
                                 <span asp-validation-for="department_id"></span>
                                 </div>
                             </div>
