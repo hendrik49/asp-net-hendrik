@@ -19,11 +19,46 @@
                         <br />
                         <form asp-controller="Home" asp-action="Create" data-parsley-validate class="form-horizontal form-label-left">
                             <div asp-validation-summary="All"></div>
+                           <div class="form-group">
+                                <label asp-for="employee_id" class="control-label col-md-3 col-sm-3 col-xs-12" ></label>
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input asp-for="employee_id" readonly="readonly" required="required" class="form-control col-md-7 col-xs-12">
+                                <span asp-validation-for="employee_id"></span>
+                                </div>
+                            </div>
                             <div class="form-group">
                                 <label asp-for="name" class="control-label col-md-3 col-sm-3 col-xs-12" ></label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                <input asp-for="name" required="required" class="form-control col-md-7 col-xs-12"/>
+                                <input asp-for="name" required="required" class="form-control col-md-7 col-xs-12">
                                 <span asp-validation-for="name"></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="birthdate" class="control-label col-md-3 col-sm-3 col-xs-12" ></label>
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input asp-for="birthdate" required="required" type="date" class="form-control col-md-7 col-xs-12">
+                                <span asp-validation-for="birthdate"></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="salary" class="control-label col-md-3 col-sm-3 col-xs-12" ></label>
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input asp-for="salary" type="number" required="required" class="form-control col-md-7 col-xs-12">
+                                <span asp-validation-for="salary"></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="address" class="control-label col-md-3 col-sm-3 col-xs-12" ></label>
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input asp-for="address" required="required" class="form-control col-md-7 col-xs-12">
+                                <span asp-validation-for="address"></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="department_id" class="control-label col-md-3 col-sm-3 col-xs-12" ></label>
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input asp-for="department_id" required="required" class="form-control col-md-7 col-xs-12">
+                                <span asp-validation-for="department_id"></span>
                                 </div>
                             </div>
                             <div class="ln_solid"></div>

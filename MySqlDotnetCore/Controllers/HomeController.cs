@@ -87,6 +87,7 @@ namespace MySqlDotnetCore.Controllers
                 employee.salary = item.salary;
                 employee.birthdate = item.birthdate;
                 employee.address = item.address;
+                employee.name = item.address;
                 employee.department_id = item.department_id;
                 db.Update(employee);
                 db.SaveChanges();
