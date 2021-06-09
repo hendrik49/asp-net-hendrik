@@ -1,0 +1,72 @@
+﻿@model IList<MySqlDotnetCore.Models.Employee>
+
+<div class="">
+    <div class="page-title">
+        <div class="title_left">
+        <h3>List Employee</h3>
+        </div>
+
+        <div class="title_right">
+            <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+                <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search for...">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="button">Go!</button>
+                </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="clearfix"></div>
+
+    <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="x_panel">
+
+                <div class="x_content">
+                    <div class="table-responsive">
+                        <table class="table table-striped jambo_table bulk_action">
+                        <thead>
+                            <tr class="headings">
+                                <th>
+                                    <input type="checkbox" id="check-all" class="flat">
+                                </th>
+                                <th class="column-title" style="width: 5%">Employee ID</th>
+                                <th class="column-title" style="width: 15%">Name</th>
+                                <th class="column-title" style="width: 15%">Birth Date</th>
+                                <th class="column-title" style="width: 15%">Salary</th>
+                                <th class="column-title" style="width: 25%">Address</th>
+                                <th class="column-title" style="width: 15%">Department</th>
+                                <th class="column-title no-link last" style="width: 10%"><span class="nobr">Action</span></th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            @{ var odd = false; }
+                            @foreach (var item in Model){
+                            <tr class="@(odd ? "odd": "even") pointer">
+                                <td class="a-center ">
+                                    <input type="checkbox" class="flat" name="table_records">
+                                </td>
+                                <td class=" ">@item.employee_id</td>
+                                <td class=" ">@item.name</td>
+                                <td class=" ">@item.birthdate</td>
+                                <td class=" ">@item.salary</td>
+                                <td class=" ">@item.address</td>
+                                <td class=" ">@item.department_id</td>
+                                <td class=" last">
+                                    <a asp-controller="Home" asp-action="Edit" asp-route-id="@item.id">Edit</a> | 
+                                    <a asp-controller="Home" asp-action="Delete" asp-route-id="@item.id">Delete</a>
+                                </td>
+                            </tr>
+                            odd = !odd;
+                            }
+                        </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
