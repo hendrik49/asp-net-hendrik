@@ -16,5 +16,8 @@ namespace MySqlDotnetCore.Data{
         {           
         }
         public virtual DbSet<Employee> Employees { get; set; }
+        public virtual DbSet<Product> Products { get; set; }
+        public virtual DbSet<ProductType> ProductTypes { get; set; }
+        public virtual DbSet<ProductCategory> ProductCategories { get; set; }
     }
 }

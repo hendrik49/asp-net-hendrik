@@ -36,7 +36,7 @@ namespace MySqlDotnetCore.Controllers
 
         public IActionResult Index()
         {
-            var employeeList = db.Employees.ToList();
+            var employeeList = db.Products.ToList();
 
             return View(employeeList);
         }
@@ -50,7 +50,7 @@ namespace MySqlDotnetCore.Controllers
 
         [HttpPost]
 
-        public IActionResult Create(Employee item)
+        public IActionResult Create(Product item)
         {
 
             if (ModelState.IsValid)
@@ -68,7 +68,7 @@ namespace MySqlDotnetCore.Controllers
         public IActionResult Edit(int? id)
         {
 
-            var item = db.Employees.SingleOrDefault(p => p.id.Equals(id));
+            var item = db.Products.SingleOrDefault(p => p.seq_Id.Equals(id));
 
             return View(item);
         }
@@ -76,20 +76,14 @@ namespace MySqlDotnetCore.Controllers
         [HttpPost]
 
         [ValidateAntiForgeryToken]
-        public IActionResult Edit(Employee item)
+        public IActionResult Edit(Product item)
         {
 
             if (ModelState.IsValid)
             {
 
-                Employee employee = db.Employees.SingleOrDefault(p => p.id.Equals(item.id));
-                employee.employee_id = item.employee_id;
-                employee.salary = item.salary;
-                employee.birthdate = item.birthdate;
-                employee.address = item.address;
-                employee.name = item.name;
-                employee.department_id = item.department_id;
-                db.Update(employee);
+                Product product = db.Products.SingleOrDefault(p => p.seq_Id.Equals(item.seq_Id));
+                db.Update(product);
                 db.SaveChanges();
 
                 return RedirectToAction("Index");
@@ -104,8 +98,8 @@ namespace MySqlDotnetCore.Controllers
         {
             if (ModelState.IsValid)
             {
-                var item = db.Employees.Find(id);
-                db.Employees.Remove(item);
+                var item = db.Products.Find(id);
+                db.Products.Remove(item);
                 db.SaveChanges();
 
                 return RedirectToAction("Index");
