@@ -58,8 +58,8 @@
                                 <td class=" ">@item.Product_Name</td>
                                 <td class=" ">@item.Product_Description</td>
                                 <td class=" last">
-                                    <a asp-controller="Home" asp-action="Edit" asp-route-id="@item.seq_Id">Edit</a> | 
-                                    <a asp-controller="Home" asp-action="Delete" asp-route-id="@item.seq_Id">Delete</a>
+                                    <a asp-controller="Home" class="btn btn-primary btn-sm"  asp-action="Edit" asp-route-id="@item.seq_Id">Edit</a> | 
+                                    <a asp-controller="Home" class="btn btn-danger btn-sm" asp-action="Delete" asp-route-id="@item.seq_Id">Delete</a>
                                 </td>
                             </tr>
                             odd = !odd;

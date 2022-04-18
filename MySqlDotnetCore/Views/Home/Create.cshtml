@@ -30,8 +30,9 @@
                                 <label class="control-label col-md-3 col-sm-3 col-xs-12" >Product Category Code</label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                 <select asp-for="Product_Category_Code" class="form-control col-md-7 col-xs-12">
-                                    <option value="FA">Finance</option>
-                                    <option value="IT">Information Technology</option>
+                                @foreach (var item in ViewBag.productCategories) {
+                                    <option value="@item.Product_Category_Code">@item.Category_Name</option>
+                                }
                                 </select>
                                 <span asp-validation-for="Product_Category_Code"></span>
                                 </div>
@@ -40,8 +41,9 @@
                                 <label class="control-label col-md-3 col-sm-3 col-xs-12" >Product Type Code</label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                 <select asp-for="Product_Type_Code" class="form-control col-md-7 col-xs-12">
-                                    <option value="FA">Finance</option>
-                                    <option value="IT">Information Technology</option>
+                                @foreach (var item in ViewBag.productTypes) {
+                                    <option value="@item.Product_Type_Code">@item.Type_Name</option>
+                                }
                                 </select>                                
                                 <span asp-validation-for="Product_Type_Code"></span>
                                 </div>
