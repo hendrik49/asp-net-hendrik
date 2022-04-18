@@ -32,25 +32,22 @@
                             <div class="form-group">
                                 <label class="control-label col-md-3 col-sm-3 col-xs-12" >Product Type Code</label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                <select asp-for="Product_Type_Code" class="form-control col-md-7 col-xs-12">
-                                    <option value="FA">Finance</option>
-                                    <option value="IT">Information Technology</option>
-                                </select>                                
+                                <input asp-for="Product_Type_Code" required="required" class="form-control col-md-7 col-xs-12">        
                                 <span asp-validation-for="Product_Type_Code"></span>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="control-label col-md-3 col-sm-3 col-xs-12" >Type Name</label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                <input asp-for="Product_Name" required="required" class="form-control col-md-7 col-xs-12">
-                                <span asp-validation-for="Product_Name"></span>
+                                <input asp-for="Type_Name" required="required" class="form-control col-md-7 col-xs-12">
+                                <span asp-validation-for="Type_Name"></span>
                                 </div>
                             </div>       
                             <div class="form-group">
                                 <label class="control-label col-md-3 col-sm-3 col-xs-12" >Type Description</label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <input asp-for="Product_Description" required="required" class="form-control col-md-7 col-xs-12">
-                                    <span asp-validation-for="Product_Description"></span>
+                                    <input asp-for="Type_Description" required="required" class="form-control col-md-7 col-xs-12">
+                                    <span asp-validation-for="Type_Description"></span>
                                 </div>
                             </div>                 
                              <div class="form-group">
