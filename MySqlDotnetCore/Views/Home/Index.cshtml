@@ -40,6 +40,7 @@
                                 <th class="column-title" style="width: 15%">Product Type Code</th>
                                 <th class="column-title" style="width: 25%">Product Name</th>
                                 <th class="column-title" style="width: 15%">Product Description</th>
+                                <th class="column-title" style="width: 10%">Status</th>
                                 <th class="column-title no-link last" style="width: 20%"><span class="nobr">Action</span></th>
                             </tr>
                         </thead>
@@ -57,6 +58,7 @@
                                 <td class=" ">@item.Product_Type_Code</td>
                                 <td class=" ">@item.Product_Name</td>
                                 <td class=" ">@item.Product_Description</td>
+                                <td class=" ">@item.Status</td>
                                 <td class=" last">
                                     <a asp-controller="Home" class="btn btn-primary btn-sm"  asp-action="Edit" asp-route-id="@item.seq_Id">Edit</a> | 
                                     <a asp-controller="Home" class="btn btn-danger btn-sm" asp-action="Delete" asp-route-id="@item.seq_Id">Delete</a>
