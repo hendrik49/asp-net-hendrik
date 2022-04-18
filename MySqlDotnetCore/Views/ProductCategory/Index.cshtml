@@ -38,7 +38,7 @@
                                 <th class="column-title" style="width: 15%">Product Category Code</th>
                                 <th class="column-title" style="width: 25%">Category Name</th>
                                 <th class="column-title" style="width: 15%">Category Description</th>
-                                <th class="column-title no-link last" style="width: 10%"><span class="nobr">Action</span></th>
+                                <th class="column-title no-link last" style="width: 20%"><span class="nobr">Action</span></th>
                             </tr>
                         </thead>
 
@@ -54,8 +54,8 @@
                                 <td class=" ">@item.Category_Name</td>
                                 <td class=" ">@item.Category_Description</td>
                                 <td class=" last">
-                                    <a asp-controller="ProductCategory" asp-action="Edit" asp-route-id="@item.seq_Id">Edit</a> | 
-                                    <a asp-controller="ProductCategory" asp-action="Delete" asp-route-id="@item.seq_Id">Delete</a>
+                                    <a asp-controller="ProductCategory" asp-action="Edit" class="btn btn-primary btn-sm" asp-route-id="@item.seq_Id">Edit</a> | 
+                                    <a asp-controller="ProductCategory" asp-action="Delete" class="btn btn-danger btn-sm" asp-route-id="@item.seq_Id">Delete</a>
                                 </td>
                             </tr>
                             odd = !odd;
