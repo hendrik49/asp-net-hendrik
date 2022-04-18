@@ -40,6 +40,8 @@ namespace MySqlDotnetCore.Controllers
 
         public IActionResult Create()
         {
+            var productCategories = db.ProductCategories.Where(o => o.Status == "Active").ToList();
+            ViewBag.productCategories = productCategories;
             return View();
         }
 
