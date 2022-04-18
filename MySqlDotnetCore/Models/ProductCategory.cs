@@ -6,7 +6,7 @@ namespace MySqlDotnetCore.Models
     public partial class ProductCategory
     {
         [Key]
-        public int seqId { get; set; }
+        public int seq_Id { get; set; }
         public String Product_Category_Code { set; get; }
         public String Category_Name { set; get; }
         public String Category_Description { set; get; }
