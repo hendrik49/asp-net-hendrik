@@ -31,9 +31,9 @@ namespace MySqlDotnetCore.Controllers
 
         public IActionResult Index()
         {
-            var employeeList = db.ProductTypes.ToList();
+            var productTypes = db.ProductTypes.ToList();
 
-            return View(employeeList);
+            return View(productTypes);
         }
 
         [HttpGet]
