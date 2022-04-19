@@ -7,12 +7,8 @@
         </div>
 
         <div class="title_right">
-            <div class="col-md-12 col-sm-12 col-xs-12 form-group pull-right top_search">
+            <div class="form-group top_search">
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search for...">
-                    <span class="input-group-btn">
-                        <button class="btn btn-default" type="button">Go!</button>
-                    </span>
                     <div class="pull-right">
                         <a asp-controller="Home" asp-action="Create" class="btn btn-success"><i class="fa fa-plus"></i> Add Product</a>
                     </div>
@@ -28,12 +24,9 @@
             <div class="x_panel">
                 <div class="x_content">
                     <div class="table-responsive">
-                        <table class="table table-striped jambo_table bulk_action">
+                        <table id="example" class="table table-striped jambo_table bulk_action">
                         <thead>
                             <tr class="headings">
-                                <th>
-                                    <input type="checkbox" id="check-all" class="flat">
-                                </th>
                                 <th class="column-title" style="width: 5%">Seq ID</th>
                                 <th class="column-title" style="width: 15%">Product Code</th>
                                 <th class="column-title" style="width: 15%">Product Category Code</th>
@@ -49,9 +42,6 @@
                             @{ var odd = false; }
                             @foreach (var item in Model){
                             <tr class="@(odd ? "odd": "even") pointer">
-                                <td class="a-center ">
-                                    <input type="checkbox" class="flat" name="table_records">
-                                </td>
                                 <td class=" ">@item.seq_Id</td>
                                 <td class=" ">@item.Product_Code</td>
                                 <td class=" ">@item.Product_Category_Code</td>
