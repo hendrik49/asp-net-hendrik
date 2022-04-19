@@ -10,7 +10,10 @@ $(document).ready(function () {
 		"excelHtml5",
 		{
 			extend: 'pdfHtml5',
-			download: 'open'
+			download: 'open',
+			exportOptions: {
+				columns: [ 0,1,2,3,4,5,6 ]
+			}
 		}
 	]
   });
