@@ -79,6 +79,11 @@ namespace MySqlDotnetCore.Controllers
 
                 ProductCategory productCategory = db.ProductCategories.SingleOrDefault(p => p.seq_Id.Equals(item.seq_Id));
                 if(productCategory != null){
+                    productCategory.Category_Description = item.Category_Description;
+                    productCategory.Product_Category_Code =  item.Product_Category_Code;
+                    productCategory.Category_Name = item.Category_Name;
+                    productCategory.Status = item.Status;
+                    productCategory.Update_Date = DateTime.Now;
                     db.Update(productCategory);
                     db.SaveChanges();
                 }
