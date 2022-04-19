@@ -104,7 +104,8 @@ namespace MySqlDotnetCore.Controllers
             if (ModelState.IsValid)
             {
                 var item = db.ProductTypes.Find(id);
-                db.ProductTypes.Remove(item);
+                item.Is_Deleted = true;
+                db.Update(item);                
                 db.SaveChanges();
 
                 return RedirectToAction("Index");

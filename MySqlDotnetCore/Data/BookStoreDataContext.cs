@@ -10,10 +10,16 @@ namespace MySqlDotnetCore.Data{
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseMySQL(ConnectionString);
+            
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {           
+            modelBuilder.Entity<Product>().HasQueryFilter(p => !p.Is_Deleted);
+            modelBuilder.Entity<ProductCategory>().HasQueryFilter(p => !p.Is_Deleted);
+            modelBuilder.Entity<ProductType>().HasQueryFilter(p => !p.Is_Deleted);
+
+
         }
         public virtual DbSet<Product> Products { get; set; }
         public virtual DbSet<ProductType> ProductTypes { get; set; }

@@ -14,6 +14,7 @@ namespace MySqlDotnetCore.Models
         public String Status { set; get; }
         public DateTime Create_Date { set; get; }
         public DateTime Update_Date { set; get; }
+        public bool Is_Deleted { set; get; }
  
     }
 }
