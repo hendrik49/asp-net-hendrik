@@ -3,12 +3,9 @@
 
 // Write your JavaScript code.
 
-$(document).ready(function() {
-	$('#example').DataTable( {
-		dom: 'Bfrtip',
-		buttons: [
-			'excelHtml5',
-			'pdfHtml5'
-		]
-	} );
-} );
+$(document).ready(function () {
+  $("#example").DataTable({
+    dom: "Bfrtip",
+    buttons: ["excelHtml5", "pdfHtml5"],
+  });
+});
