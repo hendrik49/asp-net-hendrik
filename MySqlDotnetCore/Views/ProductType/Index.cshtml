@@ -49,7 +49,7 @@
                                 <td class=" ">@item.Status</td>
                                 <td class=" last">
                                     <a asp-controller="ProductType" asp-action="Edit" class="btn btn-primary btn-sm"  asp-route-id="@item.seq_Id">Edit</a> | 
-                                    <a asp-controller="ProductType" asp-action="Delete" class="btn btn-primary btn-sm" asp-route-id="@item.seq_Id">Delete</a>
+                                    <a asp-controller="ProductType" asp-action="Delete" class="btn btn-danger btn-sm" asp-route-id="@item.seq_Id">Delete</a>
                                 </td>
                             </tr>
                             odd = !odd;
