@@ -74,6 +74,12 @@ namespace MySqlDotnetCore.Controllers
         public IActionResult Edit(int? id)
         {
 
+            var productCategories = db.ProductCategories.Where(o => o.Status == "Active").ToList();
+            ViewBag.productCategories = productCategories;
+
+            var productTypes = db.ProductTypes.Where(o => o.Status == "Active").ToList();
+            ViewBag.productTypes = productTypes;
+
             var item = db.Products.SingleOrDefault(p => p.seq_Id.Equals(id));
 
             return View(item);
@@ -89,8 +95,10 @@ namespace MySqlDotnetCore.Controllers
             {
 
                 Product product = db.Products.SingleOrDefault(p => p.seq_Id.Equals(item.seq_Id));
-                db.Update(product);
-                db.SaveChanges();
+                if(product != null){
+                    db.Update(product);
+                    db.SaveChanges();
+                }
 
                 return RedirectToAction("Index");
             }

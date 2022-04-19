@@ -80,8 +80,10 @@ namespace MySqlDotnetCore.Controllers
             {
 
                 ProductType product = db.ProductTypes.SingleOrDefault(p => p.seq_Id.Equals(item.seq_Id));
-                db.Update(product);
-                db.SaveChanges();
+                if(product != null){
+                    db.Update(product);
+                    db.SaveChanges();
+                }
 
                 return RedirectToAction("Index");
             }

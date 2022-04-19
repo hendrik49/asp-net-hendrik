@@ -1,67 +1,79 @@
-@model MySqlDotnetCore.Models.Employee
+@model MySqlDotnetCore.Models.Product
 
 <div class="">
     <div class="page-title">
         <div class="title_left">
-        <h3>Employee</h3>
+        <h3>Product <small>Edit</small></h3>
         </div>
-
         <div class="clearfix"></div>
-
         <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                     <div class="x_title">
-                        <h2>Form of Employee <small>edit data</small></h2>
-                        <div class="clearfix"></div>
+                    <div class="clearfix"></div>
                     </div>
                     <div class="x_content">
                         <br />
                         <form asp-controller="Home" asp-action="Edit" data-parsley-validate class="form-horizontal form-label-left">
                             <div asp-validation-summary="All"></div>
                             <div class="form-group">
-                                <label asp-for="employee_id" class="control-label col-md-3 col-sm-3 col-xs-12" ></label>
+                                <label asp-for="seq_Id" class="control-label col-md-3 col-sm-3 col-xs-12" ></label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                <input asp-for="employee_id" readonly="readonly" required="required" class="form-control col-md-7 col-xs-12">
-                                <span asp-validation-for="employee_id"></span>
+                                <input asp-for="seq_Id" readonly="readonly" required="required" class="form-control col-md-7 col-xs-12">
+                                <span asp-validation-for="seq_Id"></span>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label asp-for="name" class="control-label col-md-3 col-sm-3 col-xs-12" ></label>
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12" >Product Code</label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                <input asp-for="name" required="required" class="form-control col-md-7 col-xs-12">
-                                <span asp-validation-for="name"></span>
+                                <input asp-for="Product_Code" required="required" class="form-control col-md-7 col-xs-12">
+                                <span asp-validation-for="Product_Code"></span>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label asp-for="birthdate" class="control-label col-md-3 col-sm-3 col-xs-12" ></label>
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12" >Product Category Code</label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                <input asp-for="birthdate" required="required" type="date" class="form-control col-md-7 col-xs-12">
-                                <span asp-validation-for="birthdate"></span>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label asp-for="salary" class="control-label col-md-3 col-sm-3 col-xs-12" ></label>
-                                <div class="col-md-6 col-sm-6 col-xs-12">
-                                <input asp-for="salary" type="number" required="required" class="form-control col-md-7 col-xs-12">
-                                <span asp-validation-for="salary"></span>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label asp-for="address" class="control-label col-md-3 col-sm-3 col-xs-12" ></label>
-                                <div class="col-md-6 col-sm-6 col-xs-12">
-                                <input asp-for="address" required="required" class="form-control col-md-7 col-xs-12">
-                                <span asp-validation-for="address"></span>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label asp-for="department_id" class="control-label col-md-3 col-sm-3 col-xs-12" ></label>
-                                <div class="col-md-6 col-sm-6 col-xs-12">
-                                <select asp-for="department_id" class="form-control">
-                                    <option value="FA">Finance</option>
-                                    <option value="IT">Information Technology</option>
+                                <select asp-for="Product_Category_Code" class="form-control col-md-7 col-xs-12">
+                                @foreach (var item in ViewBag.productCategories) {
+                                    <option value="@item.Product_Category_Code">@item.Category_Name</option>
+                                }
                                 </select>
-                                <span asp-validation-for="department_id"></span>
+                                <span asp-validation-for="Product_Category_Code"></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12" >Product Type Code</label>
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                <select asp-for="Product_Type_Code" class="form-control col-md-7 col-xs-12">
+                                @foreach (var item in ViewBag.productTypes) {
+                                    <option value="@item.Product_Type_Code">@item.Type_Name</option>
+                                }
+                                </select>                                
+                                <span asp-validation-for="Product_Type_Code"></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12" >Product Name</label>
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input asp-for="Product_Name" required="required" class="form-control col-md-7 col-xs-12">
+                                <span asp-validation-for="Product_Name"></span>
+                                </div>
+                            </div>       
+                            <div class="form-group">
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12" >Product Description</label>
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <input asp-for="Product_Description" required="required" class="form-control col-md-7 col-xs-12">
+                                    <span asp-validation-for="Product_Description"></span>
+                                </div>
+                            </div>                 
+                             <div class="form-group">
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12" >Status</label>
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                <select asp-for="Status" class="form-control col-md-7 col-xs-12">
+                                    <option value="Active">Active</option>
+                                    <option value="Inactive">Inactive</option>
+                                </select>                                
+                                <span asp-validation-for="Status"></span>
                                 </div>
                             </div>
                             <div class="ln_solid"></div>

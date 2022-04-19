@@ -78,8 +78,10 @@ namespace MySqlDotnetCore.Controllers
             {
 
                 ProductCategory productCategory = db.ProductCategories.SingleOrDefault(p => p.seq_Id.Equals(item.seq_Id));
-                db.Update(productCategory);
-                db.SaveChanges();
+                if(productCategory != null){
+                    db.Update(productCategory);
+                    db.SaveChanges();
+                }
 
                 return RedirectToAction("Index");
             }
