@@ -5,6 +5,12 @@ namespace MySqlDotnetCore.Models
 {
     public partial class ProductType
     {
+
+        public ProductType()
+        {
+            this.Create_Date = DateTime.Now;    
+        }
+
         [Key]
         public int seq_Id { get; set; }
         public String Product_Category_Code { set; get; }
