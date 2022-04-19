@@ -41,6 +41,5 @@ namespace MySqlDotnetCore.Data
                 entity.Property(m => m.Name).HasMaxLength(127);
             });
         }
-         public virtual DbSet<Employee> Employees { get; set; }
     }
 }
